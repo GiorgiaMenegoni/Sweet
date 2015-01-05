@@ -1,8 +1,8 @@
 #ifndef __CLIENTE_H__
 #define __CLIENTE_H__
-
 #include "persona.h"
 #include <map>
+#include <fstream>
 
 class Cliente{
 	private:

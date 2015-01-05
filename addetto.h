@@ -1,8 +1,9 @@
-
 #ifndef __ADDETTO_H__
 #define __ADDETTO_H__
 
 #include <map>
+#include <fstream>
+#include <string>
 
 #include "persona.h"
 #include "addetto.h"
@@ -18,17 +19,14 @@ class Addetto{
 		Persona* p;
 		string username;
 		string password;
-		//map<string,Cliente> map_cliente;
-		//map<string,Ordine> map_ordine;	//da verificare map di map
+		
 	public:
 		Addetto();
 		void inizializza_addetto(string _nome, string _cognome, string _nato_il, string _citta);
 		bool login(string _username, string _password);
 		bool verificaMagazzino();
-		void inserisciOrdine(Cliente c, Ordine o);
 		void inviaOrdineProduzione(Ordine o);
-		void inviaOrdineFornitore(Ordine o);
-		void stampaRegistroClienti();	
+		void inviaOrdineFornitore(Ordine o);	
 };
 
 //unico metodo da richiamare nel main - metodo che avvia il programma

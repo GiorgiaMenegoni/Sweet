@@ -1,7 +1,5 @@
 #include "tipoprodotto.h"
-#include <map>
-#include <string>
-#include <fstream>
+
 
 
 		TipoProdotto::TipoProdotto() {

@@ -29,19 +29,6 @@ string Persona::get_data(){
 	return nato_il;
 }
 
-/*
-void Persona::inserisciCognome(string _cognome){
-	cognome=_cognome;
-}
-
-void Persona::inserisciData(string _data){
-	nato_il=_data;
-}
-
-void Persona::inserisciCitta(string _citta){
-	citta=_citta;
-}*/
-
 Persona* Persona::inserisci_persona(){
     Persona* pp = new Persona();
    	cout<<"Inserire il nome: ";
@@ -55,14 +42,12 @@ Persona* Persona::inserisci_persona(){
 	return pp;	
 }
 
-
 void Persona::stampa(Persona* p){
      cout << "Nome : " << p->nome << endl;
      cout << "Cognome : " << p->cognome << endl;
      cout << "Nato il : " << p->nato_il << endl;     
      cout << "Citta' : " << p->citta << endl;  
 }
-
 
 void test_persona(){
                Persona* p;

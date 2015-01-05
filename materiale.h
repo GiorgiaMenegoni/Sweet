@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include "tipoprodotto.h"
+#include <fstream>
 
 using namespace std;
 
@@ -15,9 +17,11 @@ class Materiale {
 		
 	public:
 		Materiale();
+		Materiale(string _IDM);
 		Materiale(string _IDM, string tm);
 		Materiale* inserisciTipoMateriale();
 		void stampa(Materiale* mat);
+		string get_idmateriale();
 		
 };
 

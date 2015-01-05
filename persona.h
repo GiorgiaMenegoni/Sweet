@@ -22,13 +22,6 @@ class Persona{
 		string get_data();
 		string get_citta();
 		
-        /*void inserisciNome(string _nome);
-		void inserisciCognome(string _cognome);
-		
-		void inserisciData(string _data);			//array di int[8] da implementare
-		
-		void inserisciCitta(string _citta);			//array di int[8] da implementare
-		*/
 };
 
 void test_persona();

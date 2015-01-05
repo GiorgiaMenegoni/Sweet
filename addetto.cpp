@@ -1,6 +1,4 @@
 #include "addetto.h"
-#include <fstream>
-#include <map>
 
 Addetto::Addetto(){
 	username="user1";
@@ -15,37 +13,15 @@ bool Addetto::login(string _username, string _password){
 	return ((username==_username)&&(password==_password));
 }
 
-bool Addetto::verificaMagazzino(){}
+bool Addetto::verificaMagazzino(){} //da implementare!!
 
-/*void Addetto::inserisciOrdine(Cliente c, Ordine o){
-	map_ordine.insert(pair<string,Ordine>(c.get_id(),o));
-}*/
+void Addetto::inviaOrdineProduzione(Ordine o){} //da implementare!!
 
-void Addetto::inviaOrdineProduzione(Ordine o){}
-
-void Addetto::inviaOrdineFornitore(Ordine o){}
-
-/*void Addetto::stampaRegistroClienti(){
-	map<string,Cliente>::iterator msii;
-	for(msii=map_cliente.begin();msii!=map_cliente.end();msii++){
-		cout<<msii->first<<": "<<msii->second.get_p().get_nome()<<" , "<<msii->second.get_p().get_cognome();
-	}
-}*/
-
-/*test
-void test_addetto(){
-	cout<<"TEST ADDETTO"<<endl;
-
-	Cliente* cliente;
-	cliente=cliente->inserisciCliente();
-	cliente->stampa(cliente);
-	
-}*/
+void Addetto::inviaOrdineFornitore(Ordine o){} //da implementare!!
 
 void start(){
 	
 	Addetto a;
-	Cliente b;
 	
 	int m=0;
 	int n=0;
@@ -53,6 +29,7 @@ void start(){
 	int k=0;
 	int x=0;
 	int y=0;
+	int p=0;
 	cout<<"*** SWEET CHOCOLATE FACTORY ***"<<endl;
 	
 	while(m==0){
@@ -76,9 +53,10 @@ void start(){
 	cout<<"2) Verifica ordini"<<endl;
 	cout<<"3) Verifica magazzino"<<endl;
 	cout<<"4) Registra ordini fornitori"<<endl;
-	cout<<"5) Esegui statistiche"<<endl;
+	cout<<"5) Stampa lista ordini"<<endl;
 	cout<<"6) Aggiungi prodotto"<<endl;
 	cout<<"7) Aggiungi materiale"<< endl;
+	cout<<"0) Logout" << endl;
 	cout << endl;
 	cout<<"Inserire valore: ";
 	cin>>m;
@@ -92,9 +70,10 @@ void start(){
 	             cout<<"2) Verifica ordini"<<endl;
 	             cout<<"3) Verifica magazzino"<<endl;
 	             cout<<"4) Registra ordini fornitori"<<endl;
-                 cout<<"5) Esegui statistiche"<<endl;
+                 cout<<"5) Stampa lista ordini"<<endl;
 	             cout<<"6) Aggiungi prodotto"<<endl;
                  cout<<"7) Aggiungi materiale"<< endl;
+                 cout<<"0) Logout" << endl;
 	             cout << endl;
 	             cout<<"Inserire valore: ";
 	             cin>>m;
@@ -183,7 +162,7 @@ void start(){
                                 
                     case 4:{
                         cout << "1) Inserisci nuovo cliente" << endl;
-                        cout << "2) Ritorna al menu' principale" << endl;
+                        cout << "2) Ritorna al menu' precedente" << endl;
                         cout<<endl;
                         cout << "Inserisci valore: ";
                         cin >> k;
@@ -202,17 +181,55 @@ void start(){
                          }}break;
                          
                     case 5:{
-                         
-                         }break;
+                            Ordine* ordine;
+                            ordine=ordine->inserisciOrdine();
+                            cout << endl << endl;
+                            }break;
                         
                     case 6:{
-                        m=10;
-                    }break;
+                            m=10;
+                            }break;
                     
 				
 			}}break;
 			
 			case 2:{}break;
+			case 3:{}break;
+			case 4:{}break;
+			
+			
+			case 5:{
+                 cout << "1) Stampa lista ordini" << endl;
+                 cout << "2) Ritorna al menu' principale" << endl;
+                 cout << endl;
+                 cout << "Inserisci valore: ";
+                 cin >> p;
+                 
+                 switch(p){
+                          case 1:{
+                                ifstream file ( "ordini.csv" );
+                                ifstream is;
+                                char linea[100];
+                                is.open("ordini.csv", ios::in);    
+                                is.getline(linea, 100); //leggere la linea id intestazione
+                                string value;
+                                while ( file.good()){
+                                getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                                cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
+                                }    
+                                is.close();
+                        
+                                cout << endl << endl << endl;
+                               }break;
+                               
+                         case 2:{
+                              m=10;
+                              
+                         }break;
+                         system ("CLS");
+                  }
+                   
+                 }break;
 			
 			case 6:{
                  cout << "1) Inserisci nuovo prodotto" << endl;
@@ -257,4 +274,12 @@ void start(){
 		}	
 	}
 while(m!=0);
+}
+
+void test_addetto(){
+	cout<<"TEST ADDETTO"<<endl;
+
+	Cliente* cliente;
+	cliente=cliente->inserisci_cliente();
+	cliente->stampa(cliente);	
 }

@@ -1,18 +1,25 @@
 #include "materiale.h"
-#include <map>
-#include <string>
-
-#include "tipoprodotto.h"
-#include <fstream>
 
 Materiale :: Materiale() {
 	IDMateriale = " ";
 	tipoMateriale = " ";
 }
+
+Materiale::Materiale(string _IDM){
+    IDMateriale=_IDM;
+}
 		
 Materiale::Materiale(string _IDM, string tm) {
 	IDMateriale = _IDM;
 	tipoMateriale = tm;
+}
+
+string Materiale:: get_idmateriale() {
+               string temp;
+               cout << "Inserire ID materiale : ";
+               cin >> temp;
+               IDMateriale= temp;
+			return IDMateriale;
 }
 	
 Materiale* Materiale:: inserisciTipoMateriale(){
@@ -42,9 +49,9 @@ void Materiale::stampa(Materiale* mat) {
 			}
 		}
 
-/*void test_materiale(){
+void test_materiale(){
      cout << "TEST MATERIALE" << endl;
      Materiale* tipomat;
      tipomat=tipomat->inserisciTipoMateriale();
      tipomat->stampa(tipomat);
-}*/
+}

@@ -1,6 +1,5 @@
 #include "cliente.h"
-#include <fstream>
-#include <map>
+
 
 Cliente::Cliente(): pe(){
     p = NULL;
@@ -12,10 +11,6 @@ Cliente::Cliente(string _nome, string _cognome, string _nato_il, string _citta, 
 }
 
 string Cliente::get_id(){
-    /*string temp;
-    cout << "Inserire ID cliente : ";
-    cin >> temp;
-    idCliente = temp;*/
     return idCliente;    
 }
 
@@ -26,7 +21,6 @@ Cliente* Cliente::inserisci_cliente(){
 	cout << "Inserire ID cliente : ";
     cin >> temp;
     pe = cl->p->inserisci_persona();
-	//temp = cl->get_id();
     
     cl->mci.insert( pair <string, Persona*> (temp, pe));
     	
@@ -62,12 +56,11 @@ void Cliente::stampa_tutti_clienti(){
     }                                   
     is.close();
 }
-/*    
+  
 void test_cliente(){
 	cout<<"TEST CLIENTE"<<endl;	
 	Cliente* c; // si deve inizializzare in qualche modo
 	c = c->inserisci_cliente();
 	c->stampa(c);
     //c->stampa_tutti_clienti();
-}*/
-
+}

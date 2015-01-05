@@ -4,26 +4,29 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <fstream>
 #include "tipoprodotto.h"
-#include <vector>
+#include "materiale.h"
 
 using namespace std;
 
 class Ordine {
       private:
-              int IDOrdine;
-              map<string,int> mpq;
-              map<int, map<string,int> > mo;
-              vector<int> VIDOrdine;
+              string IDOrdine; //data dell'ordine
+              map<string,int> mpq; //map del prodotto
+              map<string,int> mm; //map del materiale
+              map<string, map<string,int> > mo; //map dell'ordine
               TipoProdotto* tpp;
               TipoProdotto tps;
+              Materiale mt;
                           	
       public:
 		//costruttore di default e specifico
 		Ordine();
-		Ordine(string _IDProdotto, int _IDOrdine);
+		Ordine(string _IDProdotto, string _IDOrdine, string _IDMateriale);
 		Ordine* inserisciOrdine();
 		void stampa(Ordine* ordine);
+		string get_data();
 };
 
 void test_ordine();
