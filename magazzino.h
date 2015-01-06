@@ -24,11 +24,11 @@ class Magazzino {
 		
 		void Stampa_quantitaDisponibileMateriale(); //stampa tutti i materiali presenti in magazzino con le relative quantita'
 		void Stampa_quantitaDisponibileProdotto(); //stampa tutti i prodotti presenti in magazzino con le relative quantita'
-		Magazzino* inserisciQuantita();
+		void inserisciQuantita();
 		//void stampa(Magazzino* magaz);
 		void stampa();
 		void trova();
-		void lettura_file();
+		void lettura_file_magazzino();
 		
         void inserisciProdotto();
 		void rimuoviProdotto();

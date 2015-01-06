@@ -49,8 +49,8 @@ void Magazzino::Stampa_quantitaDisponibileProdotto(){
     is.close(); 
 }
 
-Magazzino* Magazzino::inserisciQuantita(){
-            Magazzino* mag  = new Magazzino();
+void Magazzino::inserisciQuantita(){
+            //Magazzino* mag  = new Magazzino();
 			string temp1, temp3; //si crea temporaneamente le variabili IDProdotto e Quantita'
                          //queste variabili vengono distrutte subito
             int temp2, temp4;
@@ -67,7 +67,7 @@ Magazzino* Magazzino::inserisciQuantita(){
 			                       cout << "Inserire quantita' materiale : ";
 			                       cin >> temp2;
 			                       cout << endl;
-			                       mag->mm.insert ( pair <string, int> (temp1, temp2));
+			                       //mag->mm.insert ( pair <string, int> (temp1, temp2));
 			                       
 			                       
 			                       ofstream outfile;
@@ -75,7 +75,7 @@ Magazzino* Magazzino::inserisciQuantita(){
                                    outfile << temp1 <<";" <<  temp2 <<endl;
                                    outfile.close();
                                    
-                                   return mag;
+                                   //return mag;
                                 }break;
                                 
                           case 2:{
@@ -84,13 +84,13 @@ Magazzino* Magazzino::inserisciQuantita(){
 			                   cout << "Inserire quantita' prodotto : ";
 			                   cin >> temp4;
 			                   cout << endl;
-			                   mag->pm.insert ( pair <string, int> (temp3, temp4));
+			                   //mag->pm.insert ( pair <string, int> (temp3, temp4));
 			                   
 			                    ofstream outfile;
                                 outfile.open("magazzino_prodotti.csv",ios::app);
                                 outfile << temp3 <<";" <<  temp4 <<endl;
                                 outfile.close();
-                                return mag; //ritorna un puntatore ad un Magazzino
+                                //return mag; //ritorna un puntatore ad un Magazzino
                                
                                }break;
                                }
@@ -110,7 +110,7 @@ void Magazzino::stampa(){
       
 }
 
-void Magazzino::lettura_file(){
+void Magazzino::lettura_file_magazzino(){
      
       ifstream is;
       char linea[100];
@@ -122,25 +122,15 @@ void Magazzino::lettura_file(){
                                             //cout<< linea<< endl; //faccio il parse di linea con strtok
                                             char* pch; //mi permette di arrivare dove sono arrivata
                                             pch = strtok(linea, ";"); //ogni volta che arriva al ; salva il valore in una variabile e ricomincia ricordandosi dove è arrivato
-                                            
-                                            string IDMateriale = atoi (pch);
-                                            cout<< IDMateriale; // atoi converte pch in inteto ato i=intero
+                                            string IDMateriale;
+                                            IDMateriale=(char*)(pch);
                                             pch = strtok(NULL, ";"); //NULL perchè non voglio ripartire dall'inizio ma dalla posizione a cui ero arrivato
                                             int quantita = atoi(pch);
-                                            //if (numric!= numricetta) {
-                                            //continue; //cioè salto all'elemento successivo}
                                             
-                                            //char* IDMateriale;
-                                            //IDMateriale = strtok(NULL,";");
-                                           
- 
-                                            //cout « "item numero = " « numitem « endl;
-                                            //cout « "ricetta numero = " « numric « endl;
-                                            //cout « "nome ingrediente = " « nomeitem « endl;
-                                            //cout « "grammi = " « itemgrammi « endl;
+                                            mm.insert(pair<string, int>(IDMateriale, quantita));
                                             }
                                             is.close(); //chiudo il file
-      }
+}
 
 void Magazzino::trova(){
      int temp;
@@ -178,13 +168,15 @@ void Magazzino::trova(){
 
 void test_magazzino(){
      Magazzino m;
-     //m=(*m.inserisciQuantita());
+     
+     //m.lettura_file_magazzino();
+     //m.stampa();
+     
+     m.inserisciQuantita();
      //m.Stampa_quantitaDisponibileMateriale();
      //m.Stampa_quantitaDisponibileProdotto();
-     m.stampa();
      //m->quantitadisponibile(); 
      //m.trova();
-     m.lettura_file();
 }
 
 
