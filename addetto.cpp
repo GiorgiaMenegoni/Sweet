@@ -223,7 +223,7 @@ void start(){
 						
 			case 5:{ // di m
                 cout << "1) Inserisci nuovo prodotto" << endl;
-                cout << "2) Ritorna al menu' principale" << endl;
+                cout << "2) Ritorna al menu' precedente" << endl;
                 cout << endl;
                 cout << "Inserisci valore: ";  cin >> o;
                  
@@ -242,7 +242,7 @@ void start(){
             
             case 6:{ // di m
                 cout << "1) Inserisci nuovo materiale" << endl;
-                cout << "2) Ritorna al menu' principale" << endl;
+                cout << "2) Ritorna al menu' precedente" << endl;
                 cout << endl;
                 cout << "Inserisci valore: ";  cin >> x;
                  
