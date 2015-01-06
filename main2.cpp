@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     start();
     //test_ordine();
     //test_magazzino();
+    //test_materiale();
         
     system("PAUSE");
     return EXIT_SUCCESS;

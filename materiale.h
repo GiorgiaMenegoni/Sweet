@@ -19,9 +19,10 @@ class Materiale {
 		Materiale();
 		Materiale(string _IDM);
 		Materiale(string _IDM, string tm);
-		Materiale* inserisci_tipo_materiale();
-		void stampa(Materiale* mat);
-		string get_id_materiale();		
+		void inserisci_tipo_materiale();
+		void stampa();
+		string get_id_materiale();
+        void lettura_file_materiali();		
 };
 
 void test_materiale();

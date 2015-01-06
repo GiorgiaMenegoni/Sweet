@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "tipoprodotto.h"
+#include "materiale.h"
 #include <string>
 #include <map>
 
@@ -20,16 +21,17 @@ class Magazzino {
     public:
 		Magazzino();
 		Magazzino(string _IDM, int _qDM, string _IDP, int _qDP);		
-		void stampa_quantita_disponibile_materiale(); //stampa tutti i materiali presenti in magazzino con le relative quantita'
+        void stampa_quantita_disponibile_materiale(); //stampa tutti i materiali presenti in magazzino con le relative quantita'
 		void stampa_quantita_disponibile_prodotto(); //stampa tutti i prodotti presenti in magazzino con le relative quantita'
 		void inserisci_quantita();
-		//void stampa(Magazzino* magaz);
 		void stampa();
 		void trova();
-		void lettura_file_magazzino();		
-        void inserisci_prodotto();
-		void rimuovi_prodotto();
-		void modifica_quantita();
+		void lettura_file_magazzino_materiale();
+		void lettura_file_magazzino_prodotto();
+        		
+        //void inserisci_prodotto();
+		//void rimuovi_prodotto();
+		//void modifica_quantita();
 };
 
 void test_magazzino();

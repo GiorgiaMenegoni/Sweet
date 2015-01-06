@@ -7,6 +7,7 @@
 #include <fstream>
 #include "tipoprodotto.h"
 #include "materiale.h"
+#include "magazzino.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ class Ordine {
         string id_ordine; //data dell'ordine
         map<string,int> mpq; //map del prodotto
         map<string,int> mm; //map del materiale
-        map<string, map<string,int> > mo; //map dell'ordine
+        multimap<string, map<string,int> > mo; //map dell'ordine
         TipoProdotto* tpp;
         TipoProdotto tps;
         Materiale mt;                          	

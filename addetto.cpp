@@ -65,9 +65,8 @@ void start(){
 	             cout<<"2) Stampa lista ordini"<<endl;
 	             cout<<"3) Verifica magazzino"<<endl;
 	             cout<<"4) Registra ordini fornitori"<<endl;
-                 cout<<"5) Stampa lista ordini"<<endl;
-	             cout<<"6) Aggiungi prodotto"<<endl;
-                 cout<<"7) Aggiungi materiale"<< endl;
+	             cout<<"5) Aggiungi prodotto"<<endl;
+                 cout<<"6) Aggiungi materiale"<< endl;
                  cout<<"0) Logout" << endl;
 	             cout << endl;
 	             cout<<"Inserire valore: ";
@@ -180,6 +179,7 @@ void start(){
                         cout<<endl;
                         cout << "Inserisci valore: ";
                         cin >> b;
+                        system("CLS");
                         
                         switch(b){
                             case 1:{ // di b
@@ -192,7 +192,7 @@ void start(){
                                 n=10;
                                 cout<< endl << endl;
                             }break;
-                         }
+                            }
                     }break;
                         
                     case 6:{
@@ -202,11 +202,12 @@ void start(){
             }break; // qui finisce lo switch n
 			
 			case 2:{
-            cout << "1) Stampa lista ordini" << endl;
+                cout << "1) Stampa lista ordini" << endl;
                 cout << "2) Ritorna al menu' precedente" << endl;
                 cout << endl;
                 cout << "Inserisci valore: ";
                 cin >> p;
+                system("CLS");
                  
                 switch(p){
                     case 1:{ // di p
@@ -228,13 +229,17 @@ void start(){
                     case 2:{ // di p
                         m=10;                              
                     }break;
-                    
                     system ("CLS");
                 }
             }break;
             
-			case 3:{}break;
-			case 4:{}break;
+			case 3:{
+                 
+                 }break;
+			case 4:{
+                 
+                 
+                 }break;
 						
 			case 5:{ // di m
                 cout << "1) Inserisci nuovo prodotto" << endl;
@@ -263,8 +268,8 @@ void start(){
                  
                 switch(x){
                     case 1:{ // di x
-                        Materiale* tipomat;
-                        tipomat=tipomat->inserisci_tipo_materiale();
+                        Materiale tipomat;
+                        tipomat.inserisci_tipo_materiale();
                 }break;
                      
                     case 2:{ // di x

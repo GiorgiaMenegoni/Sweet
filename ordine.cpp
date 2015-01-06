@@ -30,6 +30,9 @@ Ordine* Ordine::inserisci_ordine(){
         
     ordine->mm.insert(pair <string, int> (temp4, temp5));
     ordine->mo.insert(pair<string, map<string,int> > (temp3, ordine->mpq));
+    
+    Magazzino* mag;
+    for(int i=0;i<2; i++){mag->trova();}
         
     ofstream outfile;
     outfile.open("ordini.csv",ios::app);
@@ -41,7 +44,7 @@ Ordine* Ordine::inserisci_ordine(){
 
 void Ordine::stampa(Ordine* ordine) {
     map<string,int>:: iterator mpqi;
-    map<string, map<string,int> >::iterator moi;
+    multimap<string, map<string,int> >::iterator moi;
     map<string,int>:: iterator mmi;
             
     for(moi=ordine->mo.begin(); moi!=ordine->mo.end(); moi++){
