@@ -24,7 +24,7 @@ class TipoProdotto {
 		string get_IDProdotto();
         string get_nome();
 		void stampa(TipoProdotto* prodotto);
-		TipoProdotto* inserisciProdotto();	
+		TipoProdotto* inserisciProdotto();
 };
 
 void test_prodotto();

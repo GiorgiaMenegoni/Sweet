@@ -21,8 +21,7 @@ class Materiale {
 		Materiale(string _IDM, string tm);
 		Materiale* inserisciTipoMateriale();
 		void stampa(Materiale* mat);
-		string get_idmateriale();
-		
+		string get_idmateriale();		
 };
 
 void test_materiale();

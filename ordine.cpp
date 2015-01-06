@@ -2,11 +2,11 @@
 
 Ordine::Ordine(): tps(), mt() {
 		IDOrdine="../../....";
-        tpp=NULL;      	
+        tpp=NULL;    	
 }
 
 Ordine::Ordine(string _IDProdotto, string _IDOrdine, string _IDMateriale): tps( _IDProdotto), mt(_IDMateriale) {
-        IDOrdine = _IDOrdine;
+        IDOrdine = _IDOrdine;        
 }
 
 string Ordine::get_data(){
@@ -62,5 +62,5 @@ void Ordine::stampa(Ordine* ordine) {
 void test_ordine(){
      Ordine* o;
      o=o->inserisciOrdine();
-     o->stampa(o);
+     o->stampa(o);  
 }

@@ -1,7 +1,7 @@
 [Project]
 FileName=Progetto1.dev
 Name=Progetto1
-UnitCount=21
+UnitCount=23
 Type=1
 Ver=1
 IsCpp=1
@@ -244,17 +244,8 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit22]
-FileName=prodotti.csv
-Folder=Progetto1
-Compile=0
-Link=0
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
 [Unit23]
-FileName=prodotti.csv
+FileName=magazzino_prodotti.csv
 Folder=Progetto1
 Compile=0
 Link=0
@@ -302,6 +293,24 @@ CompilerType=0
 
 [Unit18]
 FileName=materiali.csv
+Folder=Progetto1
+Compile=0
+Link=0
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit24]
+FileName=magazzino_prodotti.csv
+Folder=Progetto1
+Compile=0
+Link=0
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit22]
+FileName=magazzino_materiale.csv
 Folder=Progetto1
 Compile=0
 Link=0

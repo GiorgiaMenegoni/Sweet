@@ -47,7 +47,7 @@ void Materiale::stampa(Materiale* mat) {
 			for (mii = mat->mp.begin(); mii != mat->mp.end(); mii++ ) {
 			cout << "ID : " << mii->first << " nome : " << mii->second << endl;
 			}
-		}
+}
 
 void test_materiale(){
      cout << "TEST MATERIALE" << endl;

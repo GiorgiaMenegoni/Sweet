@@ -19,6 +19,7 @@ class Cliente{
 		Cliente* inserisci_cliente();	
 		void stampa(Cliente* cl); //stampa solo il cliente appena creato
 		void stampa_tutti_clienti();
+		void trova_cliente();
 };
 
 void test_cliente();

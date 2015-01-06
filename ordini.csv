@@ -1,3 +1,6 @@
  IDOrdine;IDProdotto;Quantità;IDMAteriale;Quantita';
 05012015;abc; 15;def; 1
 05/01/2015;abc; 1;def; 2
+06/01/2015;max; 100;flor; 100
+06/01/2015;Max; 1000;Flor; 1000
+06/01/2015;max; 10000;max; 10

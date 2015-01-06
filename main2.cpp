@@ -17,8 +17,10 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 
-    start();
-    
+    //start();
+    //test_ordine();
+    test_magazzino();
+        
     system("PAUSE");
     return EXIT_SUCCESS;
 }
