@@ -11,9 +11,9 @@ LeftChar=1
 [Editor_1]
 Open=1
 Top=0
-CursorCol=20
-CursorRow=269
-TopLine=226
+CursorCol=29
+CursorRow=194
+TopLine=175
 LeftChar=1
 [Editor_2]
 Open=1
@@ -53,9 +53,9 @@ LeftChar=1
 [Editor_7]
 Open=1
 Top=1
-CursorCol=9
-CursorRow=138
-TopLine=145
+CursorCol=29
+CursorRow=159
+TopLine=1
 LeftChar=1
 [Editor_8]
 Open=1
@@ -130,8 +130,8 @@ LeftChar=1
 [Editor_18]
 Open=0
 Top=0
-CursorCol=2
-CursorRow=1
+CursorCol=42
+CursorRow=2
 TopLine=1
 LeftChar=1
 [Editor_19]

@@ -23,7 +23,7 @@ void start(){
 	
 	Addetto a;
 	
-	int m=0, n=0, o=0, k=0, x=0, y=0, p=0;
+	int m=0, n=0, o=0, k=0, x=0, y=0, p=0, b=0;
 
 	cout<<"*** SWEET CHOCOLATE FACTORY ***"<<endl;
 	
@@ -175,9 +175,24 @@ void start(){
                     }break; // qui finisce lo switch k
                          
                     case 5:{
-                        Ordine* ordine;
-                        ordine=ordine->inserisci_ordine();
-                        cout << endl << endl;
+                        cout << "1) Inserisci nuovo ordine" << endl;
+                        cout << "2) Ritorna al menu' precedente" << endl;
+                        cout<<endl;
+                        cout << "Inserisci valore: ";
+                        cin >> b;
+                        
+                        switch(b){
+                            case 1:{ // di b
+                                Ordine* ordine;
+                                ordine=ordine->inserisci_ordine();
+                                cout << endl << endl;
+			                }break;
+			                   
+                            case 2:{ // di b
+                                n=10;
+                                cout<< endl << endl;
+                            }break;
+                         }
                     }break;
                         
                     case 6:{
@@ -238,7 +253,7 @@ void start(){
                     }break;
                     system ("CLS");
                   }
-            }break; // qui finisce il case 6
+            }break; // qui finisce il case 5
             
             case 6:{ // di m
                 cout << "1) Inserisci nuovo materiale" << endl;
