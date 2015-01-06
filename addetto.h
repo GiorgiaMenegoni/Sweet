@@ -1,10 +1,8 @@
 #ifndef __ADDETTO_H__
 #define __ADDETTO_H__
-
 #include <map>
 #include <fstream>
 #include <string>
-
 #include "persona.h"
 #include "addetto.h"
 #include "cliente.h"
@@ -18,15 +16,14 @@ class Addetto{
 	private:
 		Persona* p;
 		string username;
-		string password;
-		
+		string password;		
 	public:
 		Addetto();
 		void inizializza_addetto(string _nome, string _cognome, string _nato_il, string _citta);
 		bool login(string _username, string _password);
-		bool verificaMagazzino();
-		void inviaOrdineProduzione(Ordine o);
-		void inviaOrdineFornitore(Ordine o);	
+		bool verifica_magazzino();
+		void invia_ordine_produzione(Ordine o);
+		void invia_ordine_fornitore(Ordine o);	
 };
 
 //unico metodo da richiamare nel main - metodo che avvia il programma

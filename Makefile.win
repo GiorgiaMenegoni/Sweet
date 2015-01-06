@@ -1,54 +1,64 @@
 # Project: Progetto1
-# Makefile created by Dev-C++ 4.9.9.2
+# Compiler: Default GCC compiler
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 06/01/15 14:46
 
-CPP  = g++.exe
-CC   = gcc.exe
-WINDRES = windres.exe
-RES  = 
-OBJ  = main2.o addetto.o azienda.o cliente.o magazzino.o materiale.o ordine.o persona.o tipoprodotto.o $(RES)
-LINKOBJ  = main2.o addetto.o azienda.o cliente.o magazzino.o materiale.o ordine.o persona.o tipoprodotto.o $(RES)
-LIBS =  -L"C:/Dev-Cpp/lib"  
-INCS =  -I"C:/Dev-Cpp/include" 
-CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
-BIN  = Progetto1.exe
-CXXFLAGS = $(CXXINCS)  
-CFLAGS = $(INCS)  
-RM = rm -f
+WXLIBNAME = wxmsw29u
+CPP       = g++.exe
+CC        = gcc.exe
+WINDRES   = "windres.exe"
+OBJ       = Default\ Profile/main2.o Default\ Profile/addetto.o Default\ Profile/azienda.o Default\ Profile/cliente.o Default\ Profile/magazzino.o Default\ Profile/materiale.o Default\ Profile/ordine.o Default\ Profile/persona.o Default\ Profile/tipoprodotto.o
+LINKOBJ   = "Default Profile/main2.o" "Default Profile/addetto.o" "Default Profile/azienda.o" "Default Profile/cliente.o" "Default Profile/magazzino.o" "Default Profile/materiale.o" "Default Profile/ordine.o" "Default Profile/persona.o" "Default Profile/tipoprodotto.o"
+LIBS      = -L"C:/Program Files (x86)/Dev-Cpp/lib/wx/gcc_lib" -L"C:/Program Files (x86)/Dev-Cpp/lib"  
+INCS      = -I"C:/Program Files (x86)/Dev-Cpp/include"
+CXXINCS   = -I"C:/Program Files (x86)/Dev-Cpp/" -I"C:/Program Files (x86)/Dev-Cpp/" -I"C:/Program Files (x86)/Dev-Cpp/include/common"
+RCINCS    = --include-dir "C:/PROGRA~2/Dev-Cpp/include/common"
+BIN       = Default Profile/Progetto1.exe
+DEFINES   = 
+CXXFLAGS  = $(CXXINCS) $(DEFINES)  
+CFLAGS    = $(INCS) $(DEFINES)  
+GPROF     = gprof.exe
+ifeq ($(OS),Windows_NT)
+   RM = del /Q
+   FixPath = $(subst /,\,$1)
+else
+   RM = rm -f
+   FixPath = $1
+endif
+LINK      = g++.exe
 
 .PHONY: all all-before all-after clean clean-custom
-
-all: all-before Progetto1.exe all-after
-
+all: all-before $(BIN) all-after
 
 clean: clean-custom
-	${RM} $(OBJ) $(BIN)
+	$(RM) $(call FixPath,$(LINKOBJ)) "$(call FixPath,$(BIN))"
 
 $(BIN): $(OBJ)
-	$(CPP) $(LINKOBJ) -o "Progetto1.exe" $(LIBS)
+	$(LINK) $(LINKOBJ) -o "$(BIN)" $(LIBS) 
 
-main2.o: main2.cpp
-	$(CPP) -c main2.cpp -o main2.o $(CXXFLAGS)
+Default\ Profile/main2.o: $(GLOBALDEPS) main2.cpp addetto.h persona.h addetto.h cliente.h persona.h ordine.h tipoprodotto.h materiale.h tipoprodotto.h tipoprodotto.h materiale.h azienda.h addetto.h cliente.h magazzino.h tipoprodotto.h materiale.h ordine.h ordinevendita.h persona.h rigaordine.h tipoprodotto.h tipoprodotto.h
+	$(CPP) -c main2.cpp -o "Default Profile/main2.o" $(CXXFLAGS)
 
-addetto.o: addetto.cpp
-	$(CPP) -c addetto.cpp -o addetto.o $(CXXFLAGS)
+Default\ Profile/addetto.o: $(GLOBALDEPS) addetto.cpp addetto.h persona.h addetto.h cliente.h persona.h ordine.h tipoprodotto.h materiale.h tipoprodotto.h tipoprodotto.h materiale.h
+	$(CPP) -c addetto.cpp -o "Default Profile/addetto.o" $(CXXFLAGS)
 
-azienda.o: azienda.cpp
-	$(CPP) -c azienda.cpp -o azienda.o $(CXXFLAGS)
+Default\ Profile/azienda.o: $(GLOBALDEPS) azienda.cpp azienda.h addetto.h persona.h addetto.h cliente.h persona.h ordine.h tipoprodotto.h materiale.h tipoprodotto.h tipoprodotto.h materiale.h
+	$(CPP) -c azienda.cpp -o "Default Profile/azienda.o" $(CXXFLAGS)
 
-cliente.o: cliente.cpp
-	$(CPP) -c cliente.cpp -o cliente.o $(CXXFLAGS)
+Default\ Profile/cliente.o: $(GLOBALDEPS) cliente.cpp cliente.h persona.h
+	$(CPP) -c cliente.cpp -o "Default Profile/cliente.o" $(CXXFLAGS)
 
-magazzino.o: magazzino.cpp
-	$(CPP) -c magazzino.cpp -o magazzino.o $(CXXFLAGS)
+Default\ Profile/magazzino.o: $(GLOBALDEPS) magazzino.cpp magazzino.h tipoprodotto.h
+	$(CPP) -c magazzino.cpp -o "Default Profile/magazzino.o" $(CXXFLAGS)
 
-materiale.o: materiale.cpp
-	$(CPP) -c materiale.cpp -o materiale.o $(CXXFLAGS)
+Default\ Profile/materiale.o: $(GLOBALDEPS) materiale.cpp materiale.h tipoprodotto.h
+	$(CPP) -c materiale.cpp -o "Default Profile/materiale.o" $(CXXFLAGS)
 
-ordine.o: ordine.cpp
-	$(CPP) -c ordine.cpp -o ordine.o $(CXXFLAGS)
+Default\ Profile/ordine.o: $(GLOBALDEPS) ordine.cpp ordine.h tipoprodotto.h materiale.h tipoprodotto.h
+	$(CPP) -c ordine.cpp -o "Default Profile/ordine.o" $(CXXFLAGS)
 
-persona.o: persona.cpp
-	$(CPP) -c persona.cpp -o persona.o $(CXXFLAGS)
+Default\ Profile/persona.o: $(GLOBALDEPS) persona.cpp Persona.h
+	$(CPP) -c persona.cpp -o "Default Profile/persona.o" $(CXXFLAGS)
 
-tipoprodotto.o: tipoprodotto.cpp
-	$(CPP) -c tipoprodotto.cpp -o tipoprodotto.o $(CXXFLAGS)
+Default\ Profile/tipoprodotto.o: $(GLOBALDEPS) tipoprodotto.cpp tipoprodotto.h
+	$(CPP) -c tipoprodotto.cpp -o "Default Profile/tipoprodotto.o" $(CXXFLAGS)

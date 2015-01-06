@@ -11,17 +11,17 @@ using namespace std;
 
 class Materiale {
 	private:
-		string IDMateriale;
-		string tipoMateriale;
+		string id_materiale;
+		string tipo_materiale;
 		map<string, string> mp;
 		
 	public:
 		Materiale();
 		Materiale(string _IDM);
 		Materiale(string _IDM, string tm);
-		Materiale* inserisciTipoMateriale();
+		Materiale* inserisci_tipo_materiale();
 		void stampa(Materiale* mat);
-		string get_idmateriale();		
+		string get_id_materiale();		
 };
 
 void test_materiale();

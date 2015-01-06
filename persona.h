@@ -20,8 +20,7 @@ class Persona{
 		string get_nome();
 		string get_cognome();
 		string get_data();
-		string get_citta();
-		
+		string get_citta();		
 };
 
 void test_persona();

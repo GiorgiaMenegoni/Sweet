@@ -1,6 +1,5 @@
 #include <cstdlib>
 #include <iostream>
-
 #include "addetto.h"
 #include "azienda.h"
 #include "cliente.h"
@@ -17,9 +16,9 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 
-    //start();
+    start();
     //test_ordine();
-    test_magazzino();
+    //test_magazzino();
         
     system("PAUSE");
     return EXIT_SUCCESS;

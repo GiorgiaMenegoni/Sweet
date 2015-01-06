@@ -13,39 +13,35 @@ bool Addetto::login(string _username, string _password){
 	return ((username==_username)&&(password==_password));
 }
 
-bool Addetto::verificaMagazzino(){} //da implementare!!
+bool Addetto::verifica_magazzino(){} //da implementare!!
 
-void Addetto::inviaOrdineProduzione(Ordine o){} //da implementare!!
+void Addetto::invia_ordine_produzione(Ordine o){} //da implementare!!
 
-void Addetto::inviaOrdineFornitore(Ordine o){} //da implementare!!
+void Addetto::invia_ordine_fornitore(Ordine o){} //da implementare!!
 
 void start(){
 	
 	Addetto a;
 	
-	int m=0;
-	int n=0;
-	int o=0;
-	int k=0;
-	int x=0;
-	int y=0;
-	int p=0;
+	int m=0, n=0, o=0, k=0, x=0, y=0, p=0;
+
 	cout<<"*** SWEET CHOCOLATE FACTORY ***"<<endl;
 	
 	while(m==0){
-          cout<<"Login addetto"<<endl;
-          string username, password;
-          cout<<"inserire username: ";
-          cin>>username;
-          cout<<"inserire password: ";
-          cin>>password;
-          if(a.login(username,password)){
-          cout<<"login effettuato"<<endl;
-               m=1;
-               system ("CLS");
-          }else{
-                cout<<"username e/o password non sono stati inseriti correttamente"<<endl;} 
-          }
+        cout<<"Login addetto"<<endl;
+        string username, password;
+        cout<<"inserire username: ";
+        cin>>username;
+        cout<<"inserire password: ";
+        cin>>password;
+        if(a.login(username,password)){
+            cout<<"login effettuato"<<endl;
+            m=1;
+            system ("CLS");
+        } 
+        else{
+            cout<<"username e/o password non sono stati inseriti correttamente"<<endl;} 
+        }
 	
 	
 	cout<<"---- MENU' ----"<<endl;
@@ -80,7 +76,7 @@ void start(){
 	             system ("CLS");
               }break;
               
-			case 1:{
+			case 1:{ // di n
                  cout<< " ---- REGISTRA ORDINE ----" << endl;
                  cout<< "1) Visualizza lista prodotti" << endl;
 				 cout<< "2) Visualizza lista materiali" << endl;
@@ -95,18 +91,17 @@ void start(){
 				 
                  switch(n){
                     case 10:{
-                 cout<< " ---- REGISTRA ORDINE ----" << endl;
-                 cout<< "1) Visualizza lista prodotti" << endl;
-				 cout<< "2) Visualizza lista materiali" << endl;
-				 cout<< "3) Visualizza lista clienti" << endl;
-				 cout<< "4) Inserisci nuovo cliente" << endl;
-			     cout<< "5) Registra ordine" << endl;
-				 cout<< "6) Torna al menu' principale" << endl;
-				 cout << endl;
-				 cout << "Inserisci valore: ";
-				 cin>>n;
-				 system ("CLS");
-                 }break;
+                        cout<< " ---- REGISTRA ORDINE ----" << endl;
+                        cout<< "1) Visualizza lista prodotti" << endl;
+				        cout<< "2) Visualizza lista materiali" << endl;
+				        cout<< "3) Visualizza lista clienti" << endl;
+				        cout<< "4) Inserisci nuovo cliente" << endl;
+			            cout<< "5) Registra ordine" << endl;
+				        cout<< "6) Torna al menu' principale" << endl;
+				        cout << endl;
+				        cout << "Inserisci valore: ";  cin>>n;
+				        system ("CLS");
+                    }break;
 				 
                     case 1:{ 
                         ifstream file ( "prodotti.csv" );
@@ -115,16 +110,15 @@ void start(){
                         is.open("prodotti.csv", ios::in);     
                         is.getline(linea, 100); //leggere la linea id intestazione
                         string value;
-                        while ( file.good() )
-                        {
-                        getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
-                        cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
+                        while ( file.good() ){
+                            getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                            cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
                         }    
                         is.close();
                         
                         cout << endl << endl << endl;
                                                                     
-                        }break;
+                    }break;
                                
                     case 2:{
                         ifstream file ( "materiali.csv" );
@@ -141,7 +135,7 @@ void start(){
                         
                         cout << endl << endl << endl;
                         
-                        }break;
+                    }break;
                                
                     case 3:{
                         ifstream file ( "clienti.csv" );//apertura del file
@@ -158,7 +152,7 @@ void start(){
                         
                         cout << endl << endl << endl;
                                                                                             
-                        }break;
+                    }break;
                                 
                     case 4:{
                         cout << "1) Inserisci nuovo cliente" << endl;
@@ -168,30 +162,30 @@ void start(){
                         cin >> k;
                         
                         switch(k){
-                          case 1:{
-                               Cliente* cl;
-			                   cl = cl->inserisci_cliente();
-			                   cout << endl << endl;
-			                   }break;
+                            case 1:{ // di k
+                                Cliente* cl;
+			                    cl = cl->inserisci_cliente();
+			                    cout << endl << endl;
+			                }break;
 			                   
-                          case 2:{
-                              n=10;
-                              cout<< endl << endl;
-                              }break;
-                         }}break;
+                            case 2:{ // di k
+                                n=10;
+                                cout<< endl << endl;
+                            }break;
+                         }
+                    }break; // qui finisce lo switch k
                          
                     case 5:{
-                            Ordine* ordine;
-                            ordine=ordine->inserisciOrdine();
-                            cout << endl << endl;
-                            }break;
+                        Ordine* ordine;
+                        ordine=ordine->inserisci_ordine();
+                        cout << endl << endl;
+                    }break;
                         
                     case 6:{
-                            m=10;
-                            }break;
-                    
-				
-			}}break;
+                        m=10;
+                    }break;                    
+				}
+            }break; // qui finisce lo switch n
 			
 			case 2:{}break;
 			case 3:{}break;
@@ -199,82 +193,80 @@ void start(){
 			
 			
 			case 5:{
-                 cout << "1) Stampa lista ordini" << endl;
-                 cout << "2) Ritorna al menu' principale" << endl;
-                 cout << endl;
-                 cout << "Inserisci valore: ";
-                 cin >> p;
+                cout << "1) Stampa lista ordini" << endl;
+                cout << "2) Ritorna al menu' principale" << endl;
+                cout << endl;
+                cout << "Inserisci valore: ";
+                cin >> p;
                  
-                 switch(p){
-                          case 1:{
-                                ifstream file ( "ordini.csv" );
-                                ifstream is;
-                                char linea[100];
-                                is.open("ordini.csv", ios::in);    
-                                is.getline(linea, 100); //leggere la linea id intestazione
-                                string value;
-                                while ( file.good()){
-                                getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
-                                cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
-                                }    
-                                is.close();
+                switch(p){
+                    case 1:{ // di p
+                        ifstream file ( "ordini.csv" );
+                        ifstream is;
+                        char linea[100];
+                        is.open("ordini.csv", ios::in);    
+                        is.getline(linea, 100); //leggere la linea id intestazione
+                        string value;
+                        while ( file.good()){
+                            getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                            cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
+                        }    
+                        is.close();
                         
-                                cout << endl << endl << endl;
-                               }break;
+                        cout << endl << endl << endl;
+                    }break;
                                
-                         case 2:{
-                              m=10;
-                              
-                         }break;
-                         system ("CLS");
-                  }
+                    case 2:{ // di p
+                        m=10;                              
+                    }break;
+                    
+                    system ("CLS");
+                }
                    
-                 }break;
+            }break; // qui finisce il case 5
 			
-			case 6:{
-                 cout << "1) Inserisci nuovo prodotto" << endl;
-                 cout << "2) Ritorna al menu' principale" << endl;
-                 cout << endl;
-                 cout << "Inserisci valore: ";
-                 cin >> o;
+			case 6:{ // di m
+                cout << "1) Inserisci nuovo prodotto" << endl;
+                cout << "2) Ritorna al menu' principale" << endl;
+                cout << endl;
+                cout << "Inserisci valore: ";  cin >> o;
                  
-                 switch(o){
-                          case 1:{
-                               TipoProdotto* tipoprod;
-			                   tipoprod=tipoprod->inserisciProdotto();
-                               }break;
-                         case 2:{
-                              m=10;
-                              
-                         }break;
-                         system ("CLS");
+                switch(o){
+                    case 1:{ // di o
+                        TipoProdotto* tipoprod;
+			            tipoprod=tipoprod->inserisci_prodotto();
+                    }break;
+                         
+                    case 2:{
+                        m=10;
+                    }break;
+                    system ("CLS");
                   }
-            }break;
+            }break; // qui finisce il case 6
             
-            case 7:{
-                 cout << "1) Inserisci nuovo materiale" << endl;
-                 cout << "2) Ritorna al menu' principale" << endl;
-                 cout << endl;
-                 cout << "Inserisci valore: ";
-                 cin >> x;
+            case 7:{ // di m
+                cout << "1) Inserisci nuovo materiale" << endl;
+                cout << "2) Ritorna al menu' principale" << endl;
+                cout << endl;
+                cout << "Inserisci valore: ";  cin >> x;
                  
-                 switch(x){
-                     case 1:{
+                switch(x){
+                    case 1:{ // di x
                         Materiale* tipomat;
-                        tipomat=tipomat->inserisciTipoMateriale();
-                        }break;
+                        tipomat=tipomat->inserisci_tipo_materiale();
+                }break;
                      
-                     case 2:{
-                         m=10;
-                         cout << endl << endl;
-                         }break;
+                    case 2:{ // di x
+                        m=10;
+                        cout << endl << endl;
+                    }break;
                  }
 
-            }break;            
-		}	
-	}
+            }break; // qui finisce il case 7 di m            
+		} // chiude lo switch	
+	} // chiude il do
 while(m!=0);
-}
+}// chiude lo start
 
 void test_addetto(){
 	cout<<"TEST ADDETTO"<<endl;

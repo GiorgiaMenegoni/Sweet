@@ -8,7 +8,7 @@ class Cliente{
 	private:
 		Persona pe;
 		Persona* p;
-		string idCliente;
+		string id_cliente;
 		map<string, Persona* > mci;
 		map<string, Persona* >:: iterator pos;       
 	public:
