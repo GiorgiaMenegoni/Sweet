@@ -46,12 +46,11 @@ void start(){
 	
 	cout<<"---- MENU' ----"<<endl;
 	cout<<"1) Registra ordine"<<endl;
-	cout<<"2) Verifica ordini"<<endl;
+	cout<<"2) Stampa lista ordini"<<endl;
 	cout<<"3) Verifica magazzino"<<endl;
 	cout<<"4) Registra ordini fornitori"<<endl;
-	cout<<"5) Stampa lista ordini"<<endl;
-	cout<<"6) Aggiungi prodotto"<<endl;
-	cout<<"7) Aggiungi materiale"<< endl;
+	cout<<"5) Aggiungi prodotto"<<endl;
+	cout<<"6) Aggiungi materiale"<< endl;
 	cout<<"0) Logout" << endl;
 	cout << endl;
 	cout<<"Inserire valore: ";
@@ -63,7 +62,7 @@ void start(){
             case 10: {
            	     cout<<"---- MENU' ----"<<endl;
 	             cout<<"1) Registra ordine"<<endl;
-	             cout<<"2) Verifica ordini"<<endl;
+	             cout<<"2) Stampa lista ordini"<<endl;
 	             cout<<"3) Verifica magazzino"<<endl;
 	             cout<<"4) Registra ordini fornitori"<<endl;
                  cout<<"5) Stampa lista ordini"<<endl;
@@ -187,13 +186,8 @@ void start(){
 				}
             }break; // qui finisce lo switch n
 			
-			case 2:{}break;
-			case 3:{}break;
-			case 4:{}break;
-			
-			
-			case 5:{
-                cout << "1) Stampa lista ordini" << endl;
+			case 2:{
+            cout << "1) Stampa lista ordini" << endl;
                 cout << "2) Ritorna al menu' principale" << endl;
                 cout << endl;
                 cout << "Inserisci valore: ";
@@ -222,10 +216,12 @@ void start(){
                     
                     system ("CLS");
                 }
-                   
-            }break; // qui finisce il case 5
-			
-			case 6:{ // di m
+            }break;
+            
+			case 3:{}break;
+			case 4:{}break;
+						
+			case 5:{ // di m
                 cout << "1) Inserisci nuovo prodotto" << endl;
                 cout << "2) Ritorna al menu' principale" << endl;
                 cout << endl;
@@ -244,7 +240,7 @@ void start(){
                   }
             }break; // qui finisce il case 6
             
-            case 7:{ // di m
+            case 6:{ // di m
                 cout << "1) Inserisci nuovo materiale" << endl;
                 cout << "2) Ritorna al menu' principale" << endl;
                 cout << endl;
