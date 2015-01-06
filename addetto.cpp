@@ -188,7 +188,7 @@ void start(){
 			
 			case 2:{
             cout << "1) Stampa lista ordini" << endl;
-                cout << "2) Ritorna al menu' principale" << endl;
+                cout << "2) Ritorna al menu' precedente" << endl;
                 cout << endl;
                 cout << "Inserisci valore: ";
                 cin >> p;
