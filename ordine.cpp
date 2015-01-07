@@ -59,6 +59,7 @@ void Ordine::stampa(Ordine* ordine) {
 }
 
 void test_ordine(){
+     cout<<"TEST ORDINE"<<endl;
      Ordine* o;
      o=o->inserisci_ordine();
      o->stampa(o);  

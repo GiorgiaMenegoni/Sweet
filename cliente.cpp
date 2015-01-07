@@ -56,8 +56,8 @@ void Cliente::stampa_tutti_clienti(){
   
 void test_cliente(){
 	cout<<"TEST CLIENTE"<<endl;	
-	Cliente* c; // si deve inizializzare in qualche modo
+	Cliente* c; // si deve inizializzare
 	c = c->inserisci_cliente();
 	c->stampa(c);
-    //c->stampa_tutti_clienti();
+    c->stampa_tutti_clienti();
 }

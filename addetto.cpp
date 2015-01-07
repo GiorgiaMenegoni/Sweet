@@ -23,7 +23,7 @@ void start(){
 	
 	Addetto a;
 	
-	int m=0, n=0, o=0, k=0, x=0, y=0, p=0, b=0;
+	int m=0, n=0, o=0, k=0, x=0, y=0, p=0, b=0, g=0 , f=0;
 
 	cout<<"*** SWEET CHOCOLATE FACTORY ***"<<endl;
 	
@@ -48,12 +48,12 @@ void start(){
 	cout<<"1) Registra ordine"<<endl;
 	cout<<"2) Stampa lista ordini"<<endl;
 	cout<<"3) Verifica magazzino"<<endl;
-	cout<<"4) Registra ordini fornitori"<<endl;
+	cout<<"4) Stampa ordini verso fornitori"<<endl;
 	cout<<"5) Aggiungi prodotto"<<endl;
 	cout<<"6) Aggiungi materiale"<< endl;
 	cout<<"0) Logout" << endl;
 	cout << endl;
-	cout<<"Inserire valore: ";
+	cout<<"Inserire valore della scelta: ";
 	cin>>m;
 	system ("CLS");
 	
@@ -64,12 +64,12 @@ void start(){
 	             cout<<"1) Registra ordine"<<endl;
 	             cout<<"2) Stampa lista ordini"<<endl;
 	             cout<<"3) Verifica magazzino"<<endl;
-	             cout<<"4) Registra ordini fornitori"<<endl;
+	             cout<<"4) Stampa ordini verso fornitori"<<endl;
 	             cout<<"5) Aggiungi prodotto"<<endl;
                  cout<<"6) Aggiungi materiale"<< endl;
                  cout<<"0) Logout" << endl;
 	             cout << endl;
-	             cout<<"Inserire valore: ";
+	             cout<<"Inserire valore della scelta: ";
 	             cin>>m;
 	             system ("CLS");
               }break;
@@ -83,7 +83,7 @@ void start(){
 				 cout<< "5) Registra ordine" << endl;
 				 cout<< "6) Torna al menu' principale" << endl;
 				 cout << endl;
-				 cout << "Inserisci valore: ";
+				 cout << "Inserisci valore della scelta: ";
 				 cin>>n;
 				 system ("CLS");
 				 
@@ -97,7 +97,7 @@ void start(){
 			            cout<< "5) Registra ordine" << endl;
 				        cout<< "6) Torna al menu' principale" << endl;
 				        cout << endl;
-				        cout << "Inserisci valore: ";  cin>>n;
+				        cout << "Inserisci valore della scelta: ";  cin>>n;
 				        system ("CLS");
                     }break;
 				 
@@ -156,7 +156,7 @@ void start(){
                         cout << "1) Inserisci nuovo cliente" << endl;
                         cout << "2) Ritorna al menu' precedente" << endl;
                         cout<<endl;
-                        cout << "Inserisci valore: ";
+                        cout << "Inserisci valore della scelta: ";
                         cin >> k;
                         
                         switch(k){
@@ -177,7 +177,7 @@ void start(){
                         cout << "1) Inserisci nuovo ordine" << endl;
                         cout << "2) Ritorna al menu' precedente" << endl;
                         cout<<endl;
-                        cout << "Inserisci valore: ";
+                        cout << "Inserisci valore della scelta: ";
                         cin >> b;
                         system("CLS");
                         
@@ -202,10 +202,11 @@ void start(){
             }break; // qui finisce lo switch n
 			
 			case 2:{
+                cout << "---- STAMPA LISTA ORDINI ----" << endl;
                 cout << "1) Stampa lista ordini" << endl;
-                cout << "2) Ritorna al menu' precedente" << endl;
+                cout << "2) Ritorna al menu' principale" << endl;
                 cout << endl;
-                cout << "Inserisci valore: ";
+                cout << "Inserisci valore della scelta: ";
                 cin >> p;
                 system("CLS");
                  
@@ -234,18 +235,119 @@ void start(){
             }break;
             
 			case 3:{
-                 
-                 }break;
+                cout << "---- VERIFICA MAGAZZINO ----" << endl;
+                cout << "1) Stampa il magazzino dei materiali" << endl;
+                cout << "2) Stampa il magazzino dei prodotto" << endl;
+                cout << "3) Verifica quantita' presente in magazzino" << endl;
+                cout << "4) Ritorna al menu' principale" << endl;
+                cout<<endl;
+                cout << "Inserisci valore della scelta: ";
+                cin >>g ;
+                system("CLS");
+                
+                switch(g){
+                         case 1:{
+                             ifstream file ( "magazzino_materiale.csv" );
+                             ifstream is;
+                             char linea[100];
+                             is.open("magazzino_materiale.csv", ios::in);    
+                             is.getline(linea, 100); //leggere la linea id intestazione
+                             string value;
+                             while ( file.good()){
+                             getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                             cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
+                             }    
+                             is.close();
+                        
+                             cout << endl << endl << endl;
+                              
+                         }break;
+                         
+                         case 2:{
+                             ifstream file ( "magazzino_prodotti.csv" );
+                             ifstream is;
+                             char linea[100];
+                             is.open("magazzino_prodotti.csv", ios::in);    
+                             is.getline(linea, 100); //leggere la linea id intestazione
+                             string value;
+                             while ( file.good()){
+                             getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                             cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
+                             }    
+                             is.close();
+                        
+                             cout << endl << endl << endl;
+                             
+                         }break;
+                         
+                         case 3:{
+                             Magazzino n;
+                             n.trova();
+                         }break;
+                         
+                         case 4:{
+                             m=10;
+                         }break;                
+                }
+            }break;
+    
 			case 4:{
-                 
-                 
-                 }break;
+                cout << "---- STAMPA ORDINI VERSO FORNITORI ----" << endl;
+                cout << "1) Stampa ordini verso fornitori relativi ai materiali" << endl;
+                cout << "2) Stampa ordini verso fornitori relativi ai prodotti" << endl;
+                cout << "3) Ritorna al menu' principale" << endl;
+                cout << endl;
+                cout << "Inserisci valore della scelta: ";  cin >> f;
+                system ("CLS");
+                
+                switch(f){
+                    case 1:{
+                        ifstream file ( "ordini_verso_fornitore_materiale.csv" );
+                        ifstream is;
+                        char linea[100];
+                        is.open("ordini_verso_fornitore_materiale.csv", ios::in);    
+                        is.getline(linea, 100); //leggere la linea id intestazione
+                        string value;
+                        while ( file.good()){
+                        getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                        cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
+                        }    
+                        is.close();
+                        
+                        cout << endl << endl << endl;
+                         
+                    }break;
+                    
+                    case 2:{
+                        ifstream file ( "ordini_verso_fornitore_tipo_prodotto.csv" );
+                        ifstream is;
+                        char linea[100];
+                        is.open("ordini_verso_fornitore_tipo_prodotto.csv", ios::in);    
+                        is.getline(linea, 100); //leggere la linea id intestazione
+                        string value;
+                        while ( file.good()){
+                        getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                        cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
+                        }    
+                        is.close();
+                        
+                        cout << endl << endl << endl;
+                        
+                    }break;
+                    
+                    case 3:{
+                        m=10;
+                    }break;                
+                }
+            }break;
 						
 			case 5:{ // di m
+                cout << "---- INSERISCI NUOVO PRODOTTO ----" << endl;
                 cout << "1) Inserisci nuovo prodotto" << endl;
-                cout << "2) Ritorna al menu' precedente" << endl;
+                cout << "2) Ritorna al menu' principale" << endl;
                 cout << endl;
-                cout << "Inserisci valore: ";  cin >> o;
+                cout << "Inserisci valore della scelta: ";  cin >> o;
+                system ("CLS");
                  
                 switch(o){
                     case 1:{ // di o
@@ -256,15 +358,16 @@ void start(){
                     case 2:{
                         m=10;
                     }break;
-                    system ("CLS");
-                  }
+               }
             }break; // qui finisce il case 5
             
             case 6:{ // di m
+                cout << "---- INSERISCI NUOVO MATERIALE ----" << endl;
                 cout << "1) Inserisci nuovo materiale" << endl;
-                cout << "2) Ritorna al menu' precedente" << endl;
+                cout << "2) Ritorna al menu' principale" << endl;
                 cout << endl;
-                cout << "Inserisci valore: ";  cin >> x;
+                cout << "Inserisci valore della scelta: ";  cin >> x;
+                system ("CLS");
                  
                 switch(x){
                     case 1:{ // di x
@@ -274,7 +377,6 @@ void start(){
                      
                     case 2:{ // di x
                         m=10;
-                        cout << endl << endl;
                     }break;
                  }
 

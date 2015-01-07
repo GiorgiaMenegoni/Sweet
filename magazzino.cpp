@@ -142,9 +142,11 @@ void Magazzino::lettura_file_magazzino_prodotto(){
 void Magazzino::trova(){
     int temp;
     cout << endl;
-    cout << "1)Cerca materiale: " << endl;
-    cout << "2)Cerca prodotto: " << endl << endl;
-    cout << "Inserisci valore: ";
+    cout << "---- RICERCA IN MAGAZZINO ----" << endl;
+    cout << "1)Cerca IDMateriale" << endl;
+    cout << "2)Cerca IDProdotto" << endl ;
+    cout << "0)Torna al menu' precedente" << endl << endl;
+    cout << "Inserisci valore della scelta: ";
     cin>> temp;
     
     switch(temp){        
@@ -162,9 +164,11 @@ void Magazzino::trova(){
                 cout << "Quantita': " << mmi->second << endl;
                 if(mmi->second >=0){
                     int scelta;
+                    cout << "---- MODIFICA MAGAZZINO MATERIALE ----" << endl;
                     cout << "1)Invia ordine a fornitore" <<endl; //invio -> incremento quantita' -> decremento
-                    cout << "2)Decremento" << endl << endl; //decremento
-                    cout << "Inserisci valore: ";
+                    cout << "2)Decremento" << endl ; //decremento
+                    cout << "0)Torna al menu' precedente" << endl << endl;
+                    cout << "Inserisci valore della scelta: ";
                     cin>> scelta;
                                     
                     switch(scelta){
@@ -258,9 +262,11 @@ void Magazzino::trova(){
                 cout << "Quantita': " << pmi->second << endl;
                 if(pmi->second >=0){
                     int scelta;
+                    cout << "---- MODIFICA MAGAZZINO PRODOTTI ----" << endl;
                     cout << "1)Invia ordine a fornitore" <<endl; //invio -> incremento quantita' -> decremento
-                    cout << "2)Decremento" << endl << endl; //decremento
-                    cout << "Inserisci valore: ";
+                    cout << "2)Decremento" << endl ;//decremento
+                    cout << "0)Torna al menu' precedente" << endl << endl;
+                    cout << "Inserisci valore della scelta: ";
                     cin>> scelta;
                                     
                     switch(scelta){
@@ -345,15 +351,14 @@ void Magazzino::trova(){
 }
 
 void test_magazzino(){
+     cout<<"TEST MAGAZZINO"<<endl;
      Magazzino m;
      m.trova();
+     m.lettura_file_magazzino();
+     m.stampa();
      
-     
-     //m.lettura_file_magazzino();
-     //m.stampa();
-     
-     //m.inserisci_quantita();
-     //m.Stampa_quantitaDisponibileMateriale();
-     //m.Stampa_quantitaDisponibileProdotto();
-     //m->quantitadisponibile();   
+     m.inserisci_quantita();
+     m.Stampa_quantitaDisponibileMateriale();
+     m.Stampa_quantitaDisponibileProdotto();
+     m.quantitadisponibile();   
 }

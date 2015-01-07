@@ -56,7 +56,7 @@ void TipoProdotto::stampa(TipoProdotto* prodotto) {
 }
 		
 void test_prodotto() {
-	cout << "test prodotto " << endl;
+	cout << "TEST PRODOTTO" << endl;
 	TipoProdotto* tipoprod;
 	tipoprod=tipoprod->inserisci_prodotto();
 	tipoprod->stampa(tipoprod);

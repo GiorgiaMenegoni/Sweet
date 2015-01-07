@@ -50,7 +50,8 @@ void Persona::stampa(Persona* p){
 }
 
 void test_persona(){
-               Persona* p;
-               p = p->inserisci_persona();
-               p->stampa(p);
+    cout<<"TEST PERSONA"<<endl;
+    Persona* p;
+    p = p->inserisci_persona();
+    p->stampa(p);
 }
