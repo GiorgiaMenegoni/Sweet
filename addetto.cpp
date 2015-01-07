@@ -5,19 +5,12 @@ Addetto::Addetto(){
 	password="pass1";
 }
 
-//void Addetto::inizializza_addetto(string _nome, string _cognome, string _nato_il, string _citta){
-	//p.inizializza(_nome, _cognome, _nato_il, _citta);
-//}
-
 bool Addetto::login(string _username, string _password){
 	return ((username==_username)&&(password==_password));
 }
 
-bool Addetto::verifica_magazzino(){} //da implementare!!
-
-void Addetto::invia_ordine_produzione(Ordine o){} //da implementare!!
-
-void Addetto::invia_ordine_fornitore(Ordine o){} //da implementare!!
+Addetto:: ~Addetto(){      
+}
 
 void start(){
 	
@@ -28,11 +21,11 @@ void start(){
 	cout<<"*** SWEET CHOCOLATE FACTORY ***"<<endl;
 	
 	while(m==0){
-        cout<<"Login addetto"<<endl;
+        cout<<"---- LOGIN ADDETTO ----"<<endl << endl;
         string username, password;
-        cout<<"inserire username: ";
+        cout<<"Inserire username: ";
         cin>>username;
-        cout<<"inserire password: ";
+        cout<<"Inserire password: ";
         cin>>password;
         if(a.login(username,password)){
             cout<<"login effettuato"<<endl;
@@ -153,17 +146,20 @@ void start(){
                     }break;
                                 
                     case 4:{
+                        cout << "---- INSERISCI CLIENTE ----" << endl;
                         cout << "1) Inserisci nuovo cliente" << endl;
                         cout << "2) Ritorna al menu' precedente" << endl;
                         cout<<endl;
                         cout << "Inserisci valore della scelta: ";
                         cin >> k;
+                        system ("CLS");
                         
                         switch(k){
                             case 1:{ // di k
                                 Cliente* cl;
 			                    cl = cl->inserisci_cliente();
 			                    cout << endl << endl;
+			                    
 			                }break;
 			                   
                             case 2:{ // di k
@@ -174,6 +170,7 @@ void start(){
                     }break; // qui finisce lo switch k
                          
                     case 5:{
+                        cout << "---- INSERISCI ORDINE ----" << endl;
                         cout << "1) Inserisci nuovo ordine" << endl;
                         cout << "2) Ritorna al menu' precedente" << endl;
                         cout<<endl;
@@ -183,6 +180,36 @@ void start(){
                         
                         switch(b){
                             case 1:{ // di b
+                                cout << "---- LISTA DEI PRODOTTI ----" << endl;
+                                ifstream file ( "prodotti.csv" );
+                                ifstream is;
+                                char linea[100];
+                                is.open("prodotti.csv", ios::in);     
+                                is.getline(linea, 100); //leggere la linea id intestazione
+                                string value;
+                                while ( file.good() ){
+                                    getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                                    cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
+                                }    
+                                is.close();
+                        
+                                cout << endl << endl << endl;
+                        
+                                cout << "---- LISTA DEI MATERIALI ----" << endl;
+                                ifstream files ( "materiali.csv" );//apertura del file
+                                ifstream iss;
+                                char linea_linea[100];
+                                iss.open("materiali.csv", ios::in);     
+                                iss.getline(linea_linea, 100); //leggere la linea id intestazione
+                                string value_value;
+                                while ( files.good() ){
+                                      getline ( files, value_value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                                      cout << string( value_value, 1, value_value.length()-2 ); // display value removing the first and the last character from it
+                                }                                   
+                                iss.close();
+                        
+                                cout << endl << endl << endl;
+                                
                                 Ordine* ordine;
                                 ordine=ordine->inserisci_ordine();
                                 cout << endl << endl;
@@ -281,8 +308,12 @@ void start(){
                          }break;
                          
                          case 3:{
-                             Magazzino n;
-                             n.trova();
+                              Magazzino n;
+                              n.stampa_quantita_disponibile_materiale();
+                              cout << endl;
+                              n.stampa_quantita_disponibile_prodotto();                           
+                              n.trova();
+                              
                          }break;
                          
                          case 4:{

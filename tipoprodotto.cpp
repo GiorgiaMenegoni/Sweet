@@ -14,7 +14,10 @@ TipoProdotto::TipoProdotto(string _id_prodotto, string _nome) {
 	id_prodotto = _id_prodotto;
 	nome = _nome;
 }
-		
+
+TipoProdotto::~TipoProdotto(){
+}
+
 string TipoProdotto:: get_idprodotto() {
     string temp;
     cout << "Inserire ID prodotto : ";

@@ -15,6 +15,7 @@ class Persona{
 	public:
 		Persona();
 		Persona(string _nome, string _cognome, string _nato_il, string _citta);
+		~Persona();
 		Persona* inserisci_persona();
 		void stampa(Persona* p);
 		string get_nome();

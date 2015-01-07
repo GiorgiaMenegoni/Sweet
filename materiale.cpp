@@ -14,6 +14,9 @@ Materiale::Materiale(string _IDM, string tm) {
 	tipo_materiale = tm;
 }
 
+Materiale::~Materiale(){
+}
+
 string Materiale:: get_id_materiale() {
                string temp;
                cout << "Inserire ID materiale : ";
@@ -30,8 +33,7 @@ void Materiale:: inserisci_tipo_materiale(){
 	cout << endl;
 	cout << "Inserire nome materiale : ";
 	cin >> temp2;
-	cout << endl;
-	//mat->mp.insert ( pair <string, string> (temp1, temp2));            	
+	cout << endl;          	
             
     ofstream outfile;
     outfile.open("materiali.csv",ios::app);
@@ -39,7 +41,7 @@ void Materiale:: inserisci_tipo_materiale(){
     outfile.close();
 }
 
-void Materiale::stampa() {
+void Materiale::stampa(){
     lettura_file_materiali();
 	map <string, string >:: iterator mii;
 	for (mii = mp.begin(); mii != mp.end(); mii++ ) {
@@ -54,7 +56,6 @@ void Materiale::lettura_file_materiali(){
      is.getline(linea, 100);  
         
      while(!is.getline(linea,100).eof()) { //es.getline mi ritorna una linea intera e un VALORE che viene depositato dentro linea -> gli sto dicendo di copiare finchè non ha finito tutta la linea —-> eof (end of file) copia finchè non è finito il file
-        //cout<< linea<< endl; //faccio il parse di linea con strtok
         char* pch; //mi permette di arrivare dove sono arrivata
         pch = strtok(linea, ";"); //ogni volta che arriva al ; salva il valore in una variabile e ricomincia ricordandosi dove è arrivato
         string id_materiale;

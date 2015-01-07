@@ -14,6 +14,9 @@ Magazzino::Magazzino (string _IDM, int _qDM, string _IDP, int _qDP) {
 	quantita_disponibile_prodotto = _qDP;	
 }
 
+Magazzino::~Magazzino(){
+}
+
 void Magazzino::stampa_quantita_disponibile_materiale(){
     ifstream file ( "magazzino_materiale.csv" );
     ifstream is;
@@ -48,14 +51,13 @@ void Magazzino::stampa_quantita_disponibile_prodotto(){
 }
 
 void Magazzino::inserisci_quantita(){
-    //Magazzino* mag  = new Magazzino();
 	string temp1, temp3; //si crea temporaneamente le variabili IDProdotto e Quantita'
                         //queste variabili vengono distrutte subito
     int temp2, temp4;
-    int scelta;            
+    int scelta;           
     cout <<"1)Inserisci nuova quantita' materiale: "<< endl;
     cout <<"2)Inserisci nuova quantita' prodotto: "<< endl << endl;
-    cout <<"Inserisci valore: " ; 
+    cout <<"Inserisci valore della scelta: " ; 
     cin>>scelta;
             
     switch(scelta){
@@ -64,13 +66,11 @@ void Magazzino::inserisci_quantita(){
 			cin >> temp1;
 			cout << "Inserire quantita' materiale : ";
 			cin >> temp2;
-			cout << endl;
-			//mag->mm.insert ( pair <string, int> (temp1, temp2));                      
+			cout << endl;                    
 			ofstream outfile;
             outfile.open("magazzino_materiale.csv",ios::app);
             outfile << temp1 <<";" <<  temp2 <<endl;
             outfile.close();                                   
-            //return mag;
         }break;
                                 
         case 2:{
@@ -79,12 +79,11 @@ void Magazzino::inserisci_quantita(){
 			cout << "Inserire quantita' prodotto : ";
 			cin >> temp4;
 			cout << endl;
-			//mag->pm.insert ( pair <string, int> (temp3, temp4));
+			
 			ofstream outfile;
             outfile.open("magazzino_prodotti.csv",ios::app);
             outfile << temp3 <<";" <<  temp4 <<endl;
             outfile.close();
-            //return mag; //ritorna un puntatore ad un Magazzino
         }break;
     }
 }
@@ -108,7 +107,6 @@ void Magazzino::lettura_file_magazzino_materiale(){
     is.getline(linea, 100);  
         
     while(!is.getline(linea,100).eof()) { //es.getline mi ritorna una linea intera e un VALORE che viene depositato dentro linea -> gli sto dicendo di copiare finchè non ha finito tutta la linea —-> eof (end of file) copia finchè non è finito il file
-        //cout<< linea<< endl; //faccio il parse di linea con strtok
         char* pch; //mi permette di arrivare dove sono arrivata
         pch = strtok(linea, ";"); //ogni volta che arriva al ; salva il valore in una variabile e ricomincia ricordandosi dove è arrivato
         string id_materiale;
@@ -126,13 +124,12 @@ void Magazzino::lettura_file_magazzino_prodotto(){
     is.open("magazzino_prodotti.csv", ios::in);
     is.getline(linea, 100);  
         
-    while(!is.getline(linea,100).eof()) { //es.getline mi ritorna una linea intera e un VALORE che viene depositato dentro linea -> gli sto dicendo di copiare finchè non ha finito tutta la linea —-> eof (end of file) copia finchè non è finito il file
-        //cout<< linea<< endl; //faccio il parse di linea con strtok
-        char* pch; //mi permette di arrivare dove sono arrivata
-        pch = strtok(linea, ";"); //ogni volta che arriva al ; salva il valore in una variabile e ricomincia ricordandosi dove è arrivato
+    while(!is.getline(linea,100).eof()) {
+        char* pch; 
+        pch = strtok(linea, ";");
         string id_prodotto;
         id_prodotto=(char*)(pch);
-        pch = strtok(NULL, ";"); //NULL perchè non voglio ripartire dall'inizio ma dalla posizione a cui ero arrivato
+        pch = strtok(NULL, ";");
         int quantita = atoi(pch);                                            
         pm.insert(pair<string, int>(id_prodotto, quantita));
         }
@@ -200,7 +197,7 @@ void Magazzino::trova(){
                             
                             ofstream outfile;
                             outfile.open("magazzino_materiale.csv",ios::app);
-                            outfile << " IDMateriale" <<";" <<  "quantita" <<endl;
+                            outfile << " IDMateriale" <<";" <<  "Quantita;" <<endl;
                             outfile.close();
                                                                                         
                             for(mmi = m.mm.begin(); mmi != m.mm.end(); mmi++){
@@ -227,7 +224,7 @@ void Magazzino::trova(){
                             
                             ofstream outfile;
                             outfile.open("magazzino_materiale.csv",ios::app);
-                            outfile << " IDMateriale" <<";" <<  "quantita" <<endl;
+                            outfile << " IDMateriale" <<";" <<  "Quantita;" <<endl;
                             outfile.close();
                                                           
                             for(mmi = m.mm.begin(); mmi != m.mm.end(); mmi++){
@@ -242,7 +239,7 @@ void Magazzino::trova(){
                 }
                 }
                 else{
-                     cout<<"Materiale assente in magazzino.";
+                     cout<<"Materiale assente in magazzino." << endl; ;
                      m.inserisci_quantita();                     
                 }
         }break;
@@ -300,7 +297,7 @@ void Magazzino::trova(){
                         //scrittura della prima linea
                         ofstream outfile;
                         outfile.open("magazzino_prodotti.csv",ios::app);
-                        outfile << " IDProdotti" <<";" <<  "quantita" <<endl;
+                        outfile << " IDProdotti" <<";" <<  "Quantita';" <<endl;
                         outfile.close();
                                                           
                         for(pmi = ma.pm.begin(); pmi != ma.pm.end(); pmi++){
@@ -328,7 +325,7 @@ void Magazzino::trova(){
                                                           
                             ofstream outfile;
                             outfile.open("magazzino_prodotti.csv",ios::app);
-                            outfile << " IDProdotti" <<";" <<  "quantita'" <<endl;
+                            outfile << " IDProdotti" <<";" <<  "Quantita';" <<endl;
                             outfile.close();
                                                           
                             for(pmi = ma.pm.begin(); pmi != ma.pm.end(); pmi++){
@@ -336,8 +333,8 @@ void Magazzino::trova(){
                                 outfile.open("magazzino_prodotti.csv",ios::app);
                                 outfile << pmi->first <<";" <<  pmi->second <<endl;
                                 outfile.close();
-                                } 
-                                                            
+                                }
+                        
                         }break;
                     }
                 }
@@ -354,11 +351,10 @@ void test_magazzino(){
      cout<<"TEST MAGAZZINO"<<endl;
      Magazzino m;
      m.trova();
-     m.lettura_file_magazzino();
+     //m.lettura_file_magazzino_materiale();
      m.stampa();
      
      m.inserisci_quantita();
-     m.Stampa_quantitaDisponibileMateriale();
-     m.Stampa_quantitaDisponibileProdotto();
-     m.quantitadisponibile();   
+     m.stampa_quantita_disponibile_materiale();
+     m.stampa_quantita_disponibile_prodotto();   
 }

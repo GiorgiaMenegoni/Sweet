@@ -23,6 +23,7 @@ class Ordine {
       public:
 		Ordine(); //costruttore di default
 		Ordine(string _IDProdotto, string _id_ordine, string _IDMateriale); //costruttore specifico
+		~Ordine();
 		Ordine* inserisci_ordine();
 		void stampa(Ordine* ordine);
 		string get_data();

@@ -29,6 +29,9 @@ string Persona::get_data(){
 	return nato_il;
 }
 
+Persona::~Persona(){
+}
+
 Persona* Persona::inserisci_persona(){
     Persona* pp = new Persona();
    	cout<<"Inserire il nome: ";

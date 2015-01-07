@@ -19,6 +19,7 @@ class Materiale {
 		Materiale();
 		Materiale(string _IDM);
 		Materiale(string _IDM, string tm);
+		~Materiale();
 		void inserisci_tipo_materiale();
 		void stampa();
 		string get_id_materiale();

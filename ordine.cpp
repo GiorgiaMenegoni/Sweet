@@ -9,6 +9,10 @@ Ordine::Ordine(string _IDProdotto, string _IDOrdine, string _IDMateriale): tps( 
     id_ordine = _IDOrdine;        
 }
 
+Ordine::~Ordine(){
+    if (tpp!=NULL){delete tpp;}
+}
+
 string Ordine::get_data(){
     string temp;
     cout<< "Inserisci data dell'ordine: ";

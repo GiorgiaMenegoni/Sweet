@@ -10,6 +10,10 @@ Cliente::Cliente(string _nome, string _cognome, string _nato_il, string _citta, 
     id_cliente = _ID;
 }
 
+Cliente::~Cliente(){
+     if(p!=NULL){delete p;}
+}
+
 string Cliente::get_id(){
     return id_cliente;    
 }

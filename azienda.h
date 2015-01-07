@@ -2,7 +2,6 @@
 #define __AZIENDA_H__
 
 #include "addetto.h"
-//#include "magazzino.h"
 
 class Azienda{
 	private:
@@ -10,6 +9,7 @@ class Azienda{
 		int p_iva;
 	public:
 		Azienda();
+		~Azienda();
 };
 
 void test_azienda();

@@ -14,10 +14,10 @@
 using namespace std;
 
 int main(int argc, char *argv[])
-{
+{ {
 
     start();
-
+    }
 
     system("PAUSE");
     return EXIT_SUCCESS;

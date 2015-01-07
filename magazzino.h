@@ -20,7 +20,8 @@ class Magazzino {
 	
     public:
 		Magazzino();
-		Magazzino(string _IDM, int _qDM, string _IDP, int _qDP);		
+		Magazzino(string _IDM, int _qDM, string _IDP, int _qDP);
+        ~Magazzino();		
         void stampa_quantita_disponibile_materiale(); //stampa tutti i materiali presenti in magazzino con le relative quantita'
 		void stampa_quantita_disponibile_prodotto(); //stampa tutti i prodotti presenti in magazzino con le relative quantita'
 		void inserisci_quantita();
@@ -28,10 +29,7 @@ class Magazzino {
 		void trova();
 		void lettura_file_magazzino_materiale();
 		void lettura_file_magazzino_prodotto();
-        		
-        //void inserisci_prodotto();
-		//void rimuovi_prodotto();
-		//void modifica_quantita();
+
 };
 
 void test_magazzino();
