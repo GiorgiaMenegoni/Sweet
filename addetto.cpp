@@ -52,7 +52,7 @@ void start(){
 	
 	do{
 		switch(m){
-            case 10: {
+            case 10:{
            	     cout<<"---- MENU' ----"<<endl;
 	             cout<<"1) Registra ordine"<<endl;
 	             cout<<"2) Stampa lista ordini"<<endl;
@@ -166,7 +166,12 @@ void start(){
                                 n=10;
                                 cout<< endl << endl;
                             }break;
+                            
+                            default:{
+                                n=10;        
+                            }break;
                          }
+                         
                     }break; // qui finisce lo switch k
                          
                     case 5:{
@@ -219,12 +224,21 @@ void start(){
                                 n=10;
                                 cout<< endl << endl;
                             }break;
+                            
+                            default:{
+                                n=10;
+                            }break;
+                            
                             }
                     }break;
                         
                     case 6:{
                         m=10;
-                    }break;                    
+                    }break;
+                    
+                    default:{
+				        n=10;
+                    }break;              
 				}
             }break; // qui finisce lo switch n
 			
@@ -257,7 +271,10 @@ void start(){
                     case 2:{ // di p
                         m=10;                              
                     }break;
-                    system ("CLS");
+                    
+                    default:{
+                        m=10;
+                    }break;
                 }
             }break;
             
@@ -318,6 +335,10 @@ void start(){
                          
                          case 4:{
                              m=10;
+                         }break;
+                         
+                         default:{
+                             m=10;
                          }break;                
                 }
             }break;
@@ -368,7 +389,11 @@ void start(){
                     
                     case 3:{
                         m=10;
-                    }break;                
+                    }break;
+                    
+                    default:{
+                        m=10;
+                    }break;               
                 }
             }break;
 						
@@ -389,6 +414,10 @@ void start(){
                     case 2:{
                         m=10;
                     }break;
+                    
+                    default:{
+                        m=10;
+                    }break;
                }
             }break; // qui finisce il case 5
             
@@ -404,14 +433,22 @@ void start(){
                     case 1:{ // di x
                         Materiale tipomat;
                         tipomat.inserisci_tipo_materiale();
-                }break;
+                    }break;
                      
                     case 2:{ // di x
                         m=10;
                     }break;
+                    
+                    default:{
+                        m=10;
+                    }break;
                  }
 
-            }break; // qui finisce il case 7 di m            
+            }break;// qui finisce il case 6 di m 
+          
+          default:{
+              m=10;  
+          }break;               
 		} // chiude lo switch	
 	} // chiude il do
 while(m!=0);

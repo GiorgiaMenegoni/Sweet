@@ -1,7 +1,9 @@
  IDMateriale;Nome;
-fr;FiocchiRossi
-cro;CartaRegaloOro
-vb;verdeb
-vb;verdeb
-nv;nastriverdi
-cr;cartarossa
+fr;FiocchiRossi;
+fo;FiocchiOro;
+cro;CartaRegaloOro;
+crb;CartaRegaloBlu;
+crr;CartaRegaloRossa;
+nv;NastriVerdi;
+ng;NastriGialli;
+nr;NastriRosa;

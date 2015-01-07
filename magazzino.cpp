@@ -197,7 +197,7 @@ void Magazzino::trova(){
                             
                             ofstream outfile;
                             outfile.open("magazzino_materiale.csv",ios::app);
-                            outfile << " IDMateriale" <<";" <<  "Quantita;" <<endl;
+                            outfile << " IDMateriale" <<";" <<  "Quantita';" <<endl;
                             outfile.close();
                                                                                         
                             for(mmi = m.mm.begin(); mmi != m.mm.end(); mmi++){
@@ -224,7 +224,7 @@ void Magazzino::trova(){
                             
                             ofstream outfile;
                             outfile.open("magazzino_materiale.csv",ios::app);
-                            outfile << " IDMateriale" <<";" <<  "Quantita;" <<endl;
+                            outfile << " IDMateriale" <<";" <<  "Quantita';" <<endl;
                             outfile.close();
                                                           
                             for(mmi = m.mm.begin(); mmi != m.mm.end(); mmi++){

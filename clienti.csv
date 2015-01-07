@@ -1,8 +1,8 @@
- nome_cognome;nome;cognome;nato_il;citta';
-mariorossi;Mario;Rossi;01/02/1950;Trento;
-marcoverdi;Marco;Verdi;01/05/1990;Roma;
-paolorossi;paolo;rossi;01/01/1965;Milano
-paolabianchi;Paola;Bianchi;05/05/1996;Torino
-chiarabianchi;Chiara;Bianchi;26/12/1989;Roma
-alessiarossi;alessia;rossi;14/04/1978;Trieste
-mattiaverdi;mattia;verdi;18/09/1985;Verona
+ nome_cognome;Nome;Nognome;Nato_il;Citta';
+mario_rossi;Mario;Rossi;01/02/1950;Trento;
+marco_verdi;Marco;Verdi;01/05/1990;Roma;
+paolo_rossi;Paolo;Rossi;01/01/1965;Milano;
+paola_bianchi;Paola;Bianchi;05/05/1996;Torino;
+chiara_bianchi;Chiara;Bianchi;26/12/1989;Roma;
+alessia_rossi;Alessia;Rossi;14/04/1978;Trieste;
+mattia_verdi;Mattia;Verdi;18/09/1985;Verona;
