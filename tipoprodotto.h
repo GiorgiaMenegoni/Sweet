@@ -18,7 +18,7 @@ class TipoProdotto {
 		//costruttore di default e specifico
 		TipoProdotto();
 		TipoProdotto(string _id_prodotto); //costruttore ad un solo parametro da passare ad Ordine.h
-		TipoProdotto(string _, string _nome);
+		TipoProdotto(string _id_prodotto, string _nome);
 		~TipoProdotto();
 		string get_idprodotto();
 		string get_IDProdotto();
